@@ -27,7 +27,7 @@ function Dashboard() {
     .filter((t) => t.due_date && t.due_date <= today)
     .length;
   const focus = [...open]
-    .sort((a, b) => (priorityRank[a.priority] - priorityRank[b.priority]) || (a.due_date ?? "9").localeCompare(b.due_date ?? "9"))
+    .sort((a, b) => (priorityRank(a.priority) - priorityRank(b.priority)) || (a.due_date ?? "9").localeCompare(b.due_date ?? "9"))
     .slice(0, 6);
 
   const stats = [

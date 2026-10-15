@@ -58,7 +58,7 @@ function Tasks() {
 
   const shown = useMemo(() => {
     const f = tasks.filter((t) => (filter === "all" ? true : filter === "done" ? t.status === "done" : t.status !== "done"));
-    return f.sort((a, b) => (priorityRank[a.priority] - priorityRank[b.priority]) || (a.due_date ?? "9").localeCompare(b.due_date ?? "9"));
+    return f.sort((a, b) => (priorityRank(a.priority) - priorityRank(b.priority)) || (a.due_date ?? "9").localeCompare(b.due_date ?? "9"));
   }, [tasks, filter]);
 
   const today = new Date().toISOString().slice(0, 10);

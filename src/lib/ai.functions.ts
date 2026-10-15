@@ -10,7 +10,7 @@ const emailOut = z.object({ subject: z.string(), body: z.string() });
 
 export const generateEmail = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: { topic: string; purpose: string; tone: string; context?: string }) =>
+  .inputValidator((d: { topic: string; purpose: string; tone: string; context?: string | undefined }) =>
     z
       .object({
         topic: z.string().min(1).max(500),

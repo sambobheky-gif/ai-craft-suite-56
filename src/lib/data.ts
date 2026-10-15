@@ -53,7 +53,8 @@ export function useDelete(table: "tasks" | "meetings" | "emails") {
   });
 }
 
-export const priorityRank = { high: 0, medium: 1, low: 2 } as Record<string, number>;
+const ranks: Record<string, number> = { high: 0, medium: 1, low: 2 };
+export const priorityRank = (p: string) => ranks[p] ?? 1;
 
 export function addDays(n: number) {
   const d = new Date();
