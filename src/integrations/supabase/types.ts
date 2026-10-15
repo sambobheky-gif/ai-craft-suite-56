@@ -14,7 +14,117 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      emails: {
+        Row: {
+          body: string
+          created_at: string
+          id: string
+          meeting_id: string | null
+          purpose: string
+          subject: string
+          tone: string
+          topic: string
+          user_id: string
+        }
+        Insert: {
+          body?: string
+          created_at?: string
+          id?: string
+          meeting_id?: string | null
+          purpose?: string
+          subject?: string
+          tone?: string
+          topic?: string
+          user_id?: string
+        }
+        Update: {
+          body?: string
+          created_at?: string
+          id?: string
+          meeting_id?: string | null
+          purpose?: string
+          subject?: string
+          tone?: string
+          topic?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      meetings: {
+        Row: {
+          action_items: Json
+          created_at: string
+          decisions: Json
+          id: string
+          key_points: Json
+          notes: string
+          summary: string
+          title: string
+          user_id: string
+        }
+        Insert: {
+          action_items?: Json
+          created_at?: string
+          decisions?: Json
+          id?: string
+          key_points?: Json
+          notes?: string
+          summary?: string
+          title?: string
+          user_id?: string
+        }
+        Update: {
+          action_items?: Json
+          created_at?: string
+          decisions?: Json
+          id?: string
+          key_points?: Json
+          notes?: string
+          summary?: string
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      tasks: {
+        Row: {
+          category: string
+          created_at: string
+          description: string
+          due_date: string | null
+          id: string
+          meeting_id: string | null
+          priority: string
+          status: string
+          title: string
+          user_id: string
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          description?: string
+          due_date?: string | null
+          id?: string
+          meeting_id?: string | null
+          priority?: string
+          status?: string
+          title: string
+          user_id?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string
+          due_date?: string | null
+          id?: string
+          meeting_id?: string | null
+          priority?: string
+          status?: string
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
