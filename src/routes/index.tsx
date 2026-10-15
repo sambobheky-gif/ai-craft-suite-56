@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Mail, NotebookPen, ListChecks, Sparkles } from "lucide-react";
@@ -97,7 +97,6 @@ function Landing() {
           <button type="button" className="text-sm text-muted-foreground hover:text-foreground w-full" onClick={() => setMode(mode === "in" ? "up" : "in")}>
             {mode === "in" ? "No account? Sign up" : "Have an account? Sign in"}
           </button>
-          <p className="sr-only"><Link to="/dashboard">Dashboard</Link></p>
         </form>
       </section>
     </div>
